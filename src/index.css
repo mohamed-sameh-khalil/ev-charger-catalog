@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #060B18;
+  --color-brand-navy: #0C1A35;
+  --color-brand-blue: #0078FF;
+  --color-brand-sky: #50C8FF;
+}
+
+body {
+  margin: 0;
+  background-color: #060B18;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:lang(ar), [dir='rtl'] {
+  font-family: 'Cairo', system-ui, sans-serif;
+}
+
+:lang(en), [dir='ltr'] {
+  font-family: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+}
