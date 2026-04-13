@@ -4,16 +4,45 @@ import { useLang } from '../contexts/LanguageContext'
 import { getProducts } from '../services/products'
 import ProductCard from '../components/ProductCard'
 
+/**
+ * Map questionnaire answers to getProducts() filters.
+ * Questions: protocol, product_type, phase, smart
+ */
 function buildFilters(answers) {
   const filters = {}
-  if (answers.speed === 'standard') filters.max_power_kw = 7
-  else if (answers.speed === 'fast') { filters.min_power_kw = 7; filters.max_power_kw = 22 }
-  else if (answers.speed === 'ultra') filters.min_power_kw = 22
-  if (answers.installation === 'wall') filters.installation_type = 'Wall-mounted'
-  else if (answers.installation === 'pedestal') filters.installation_type = 'Pedestal'
-  else if (answers.installation === 'portable') filters.installation_type = 'Portable'
+
+  // Protocol → connector_type
+  if (answers.protocol === 'gbt') filters.connector_type = 'GBT'
+  else if (answers.protocol === 'type1') filters.connector_type = 'Type 1'
+  else if (answers.protocol === 'type2') filters.connector_type = 'Type 2'
+
+  // Product type → category_name
+  if (answers.product_type === 'wall') filters.category_name = 'Wall Mounted Charger'
+  else if (answers.product_type === 'cable') filters.category_name = 'Cables'
+  else if (answers.product_type === 'portable') filters.category_name = 'Portable Charger'
+
+  // Phase
+  if (answers.phase === 'single') filters.phase = 'Single Phase'
+  else if (answers.phase === 'three') filters.phase = 'Three Phase'
+
+  // Smart
   if (answers.smart === 'yes') filters.is_smart = true
+
   return filters
+}
+
+function getReason(answers, t) {
+  const tags = []
+  if (answers.protocol === 'gbt') tags.push('GBT / Chinese protocol')
+  else if (answers.protocol === 'type1') tags.push('Type 1')
+  else if (answers.protocol === 'type2') tags.push('Type 2')
+  if (answers.product_type === 'wall') tags.push(t('nav_find') === 'Help Me Choose' ? 'wall-mounted charger' : 'شاحن جداري')
+  else if (answers.product_type === 'cable') tags.push(t('nav_find') === 'Help Me Choose' ? 'cable' : 'كابل')
+  else if (answers.product_type === 'portable') tags.push(t('nav_find') === 'Help Me Choose' ? 'portable charger' : 'شاحن محمول')
+  if (answers.phase === 'single') tags.push(t('filter_single'))
+  else if (answers.phase === 'three') tags.push(t('filter_three'))
+  if (answers.smart === 'yes') tags.push(t('spec_smart'))
+  return tags.length > 0 ? t('results_matched', { tags: tags.join(', ') }) : t('results_based')
 }
 
 export default function ResultsPage() {
@@ -26,37 +55,25 @@ export default function ResultsPage() {
   useEffect(() => {
     const filters = buildFilters(answers)
     getProducts(filters)
+      .then((data) => {
+        // If exact match returns nothing, broaden by removing phase filter
+        if (data.length === 0 && filters.phase) {
+          const { phase, ...broader } = filters
+          return getProducts(broader)
+        }
+        return data
+      })
       .then((data) => setProducts(data.slice(0, 3)))
       .finally(() => setLoading(false))
   }, [])
 
-  const tagKeys = {
-    home: 'results_tag_home',
-    business: 'results_tag_business',
-    standard: 'results_tag_standard',
-    fast: 'results_tag_fast',
-    ultra: 'results_tag_ultra',
-    smart_yes: 'results_tag_smart',
-    portable: 'results_tag_portable',
-  }
-
-  function getReason() {
-    const tags = []
-    if (answers.location) tags.push(t(tagKeys[answers.location] || ''))
-    if (answers.speed) tags.push(t(tagKeys[answers.speed] || ''))
-    if (answers.smart === 'yes') tags.push(t('results_tag_smart'))
-    if (answers.installation === 'portable') tags.push(t('results_tag_portable'))
-    const filtered = tags.filter(Boolean)
-    return filtered.length > 0
-      ? t('results_matched', { tags: filtered.join(', ') })
-      : t('results_based')
-  }
+  const reason = getReason(answers, t)
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-10">
         <h1 className="text-3xl font-bold text-white mb-3">{t('results_title')}</h1>
-        <p className="text-gray-400">{getReason()}</p>
+        <p className="text-gray-400">{reason}</p>
       </div>
 
       {loading ? (

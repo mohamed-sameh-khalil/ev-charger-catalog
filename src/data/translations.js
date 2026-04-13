@@ -3,32 +3,27 @@ export const translations = {
     // Nav
     nav_home: 'Home',
     nav_catalog: 'Products',
-    nav_find: 'Find Your Charger',
+    nav_find: 'Help Me Choose',
     nav_knowledge: 'Knowledge Bank',
     nav_expert: 'Talk to Our Expert',
+    nav_compare: 'Compare',
 
     // Hero
     hero_title: 'Power Your Drive,\nCharge with Confidence',
     hero_subtitle:
       'Find the perfect EV charger for your home, business, or fleet — built for reliability and smart charging.',
-    hero_browse: 'Browse Products',
     hero_choose: 'Help Me Choose',
+    hero_knowledge: 'Knowledge Bank',
+    hero_browse: 'Browse Products',
     hero_expert: 'Talk to Our Expert',
 
-    // Features strip
-    feat_fast_title: 'Fast Charging',
-    feat_fast_desc: 'Up to 150 kW output for rapid top-ups',
-    feat_smart_title: 'Smart Control',
-    feat_smart_desc: 'App-enabled scheduling and monitoring',
-    feat_tough_title: 'Built to Last',
-    feat_tough_desc: 'IP65-rated, weatherproof enclosures',
-
-    // Featured
+    // Featured / Best Sellers
     section_featured: 'Best Sellers',
     view_all: 'View All Products',
 
     // Catalog
     catalog_title: 'Products',
+    catalog_search_placeholder: 'Search products...',
     filter_category: 'Category',
     filter_all_categories: 'All categories',
     filter_brand: 'Brand',
@@ -40,8 +35,6 @@ export const translations = {
     filter_power: 'Power Output',
     filter_connector: 'Connector Type',
     filter_all_connectors: 'All connectors',
-    filter_installation: 'Installation Type',
-    filter_all_installations: 'All types',
     filter_phase: 'Phase',
     filter_all_phases: 'All phases',
     filter_single: 'Single Phase',
@@ -64,8 +57,11 @@ export const translations = {
     product_features: 'Key Features',
     product_description: 'Product Description',
     product_specs: 'Specifications',
-    product_downloads: 'Downloads',
+    product_downloads: 'Datasheet',
     product_quote: 'Request a Quote',
+    product_compare: 'Compare',
+    product_compare_added: 'Added to compare',
+    product_compare_remove: 'Remove',
     spec_power: 'Power Output',
     spec_connector: 'Connector Type',
     spec_phase: 'Phase',
@@ -73,6 +69,7 @@ export const translations = {
     spec_smart: 'Smart Features',
     spec_category: 'Category',
     spec_brand: 'Brand',
+    spec_warranty: 'Warranty',
     spec_yes: 'Yes',
     spec_no: 'No',
 
@@ -80,13 +77,13 @@ export const translations = {
     expert_title: 'Talk to Our Expert',
     expert_subtitle: "Fill in your details and our team will get back to you shortly.",
     form_name: 'Your Name',
-    form_name_placeholder: 'e.g. Ahmed Al-Rashidi',
+    form_name_placeholder: 'e.g. Ahmed Mohamed',
     form_mobile: 'Mobile Number',
-    form_mobile_placeholder: 'e.g. +966 50 123 4567',
+    form_mobile_placeholder: 'e.g. +20 10 1234 5678',
     form_submit: 'Send Request',
     form_submitting: 'Sending...',
     form_success_title: 'Request Sent!',
-    form_success_body: "Thank you! Our expert will contact you within 24 hours.",
+    form_success_body: 'Your request has been sent to our team. One of our team members will contact you shortly.',
     form_close: 'Close',
     form_required: 'This field is required.',
 
@@ -94,6 +91,15 @@ export const translations = {
     quote_title: 'Request a Quote',
     quote_subtitle: 'We will prepare a custom quote and contact you shortly.',
     quote_product_label: 'Product',
+
+    // Compare
+    compare_title: 'Compare Products',
+    compare_bar_label: 'Comparing {n} products',
+    compare_btn: 'Compare Now',
+    compare_clear: 'Clear all',
+    compare_max: 'Max 3 products',
+    compare_empty: 'Select 2 or more products to compare.',
+    compare_go: 'Go to Compare',
 
     // Knowledge Bank
     kb_title: 'Knowledge Bank',
@@ -105,7 +111,7 @@ export const translations = {
       },
       {
         q: 'What is the difference between Level 1, Level 2, and DC fast charging?',
-        a: 'Level 1 uses a standard household socket (~2.4 kW). Level 2 uses a dedicated 240V circuit (3.7–22 kW) and is the most common home/commercial choice. DC fast chargers (50–350 kW) bypass the car\'s onboard charger and charge the battery directly, making them ideal for public and fleet use.',
+        a: "Level 1 uses a standard household socket (~2.4 kW). Level 2 uses a dedicated 240V circuit (3.7–22 kW) and is the most common home/commercial choice. DC fast chargers (50–350 kW) bypass the car's onboard charger and charge the battery directly, making them ideal for public and fleet use.",
       },
       {
         q: 'What is a Type 2 connector?',
@@ -117,7 +123,7 @@ export const translations = {
       },
       {
         q: 'How long does it take to fully charge an EV?',
-        a: 'It depends on the car\'s battery size and the charger speed. A 60 kWh battery takes ~8 hours on a 7 kW charger, ~3 hours on a 22 kW charger, and under 1 hour on a 50 kW DC fast charger.',
+        a: "It depends on the car's battery size and the charger speed. A 60 kWh battery takes ~8 hours on a 7 kW charger, ~3 hours on a 22 kW charger, and under 1 hour on a 50 kW DC fast charger.",
       },
       {
         q: 'Do I need a smart charger?',
@@ -133,11 +139,31 @@ export const translations = {
       },
       {
         q: 'What is load balancing?',
-        a: 'Load balancing (or dynamic load management) automatically distributes available power across multiple charge points to prevent overloading a building\'s electrical supply. This is essential for multi-unit installations in homes, offices, and fleets.',
+        a: "Load balancing (or dynamic load management) automatically distributes available power across multiple charge points to prevent overloading a building's electrical supply. This is essential for multi-unit installations in homes, offices, and fleets.",
       },
       {
         q: 'How do I choose the right charger?',
         a: 'Consider: (1) location — home, business, or public; (2) number of vehicles to charge simultaneously; (3) your available power supply — single or three phase; (4) whether you want smart features; (5) your budget. Use our "Help Me Choose" tool for a guided recommendation.',
+      },
+      {
+        q: 'What is a GBT connector?',
+        a: 'GBT (GB/T) is the Chinese national standard for EV charging connectors, used in Chinese-made vehicles like BYD, NIO, and Chery. GB/T DC and AC connectors are different from European Type 2 and CCS standards.',
+      },
+      {
+        q: 'Can I use a Type 2 charger with a Chinese car?',
+        a: 'No — Chinese imported cars (BYD, NIO, Chery, etc.) use the GBT standard, which requires a GBT-compatible charger or cable. Using the wrong connector type will not work and may damage the charging port.',
+      },
+      {
+        q: 'What warranty do your products carry?',
+        a: 'Warranty terms vary by product and brand. Each product page lists the specific warranty period. Generally, our wall-mounted chargers come with a 2-year manufacturer warranty, and portable chargers with a 1-year warranty.',
+      },
+      {
+        q: 'Do I need a licensed electrician to install a wall charger?',
+        a: 'Yes. Wall-mounted EV chargers must be installed by a licensed electrician to ensure safety and compliance with local electrical codes. Improper installation may void the warranty and create safety hazards.',
+      },
+      {
+        q: 'What happens if I live in an apartment?',
+        a: 'If you live in an apartment, installing a wall charger may require approval from your building management. A portable charger is often the most practical solution. Contact us at <a href="#contact" class="text-brand-sky hover:underline">our contact page</a> for tailored advice.',
       },
     ],
 
@@ -148,10 +174,10 @@ export const translations = {
     contact_email: 'Email',
     contact_address: 'Address',
     contact_hours: 'Business Hours',
-    contact_phone_val: '+966 11 123 4567',
-    contact_email_val: 'info@evchargersolutions.com',
-    contact_address_val: 'Riyadh, Saudi Arabia',
-    contact_hours_val: 'Sunday – Thursday, 9am – 6pm',
+    contact_phone_val: '+20 12 2213 7316',
+    contact_email_val: 'info@solargyco.com',
+    contact_address_val: '15 El Sayeda Khadiga Street, Nasr City, Cairo, Egypt',
+    contact_hours_val: 'Sunday – Thursday, 9:00 AM – 5:00 PM',
 
     // Questionnaire
     q_step: 'Step {current} of {total}',
@@ -160,21 +186,14 @@ export const translations = {
     q_finish: 'See Recommendations',
 
     // Results
-    results_title: 'Your Recommended Chargers',
+    results_title: 'Your Recommended Products',
     results_matched: 'Matched for: {tags}.',
     results_based: 'Based on your preferences.',
     results_none_title: 'No exact matches found.',
-    results_none_sub: 'Browse our full catalog to find the right charger.',
+    results_none_sub: 'Browse our full catalog to find the right product.',
     results_browse: 'Browse All Products',
     results_retake: '← Retake the questionnaire',
     results_browse_all: 'Browse all products instead →',
-    results_tag_home: 'home use',
-    results_tag_business: 'business use',
-    results_tag_standard: 'standard charging speed',
-    results_tag_fast: 'fast charging',
-    results_tag_ultra: 'ultra-fast charging',
-    results_tag_smart: 'smart features',
-    results_tag_portable: 'portability',
 
     // Footer
     footer_tagline: 'Reliable EV charging solutions for home, business, and on the go.',
@@ -187,32 +206,27 @@ export const translations = {
     // Nav
     nav_home: 'الرئيسية',
     nav_catalog: 'المنتجات',
-    nav_find: 'اختر شاحنك',
+    nav_find: 'ساعدني في الاختيار',
     nav_knowledge: 'بنك المعلومات',
     nav_expert: 'تحدث مع خبيرنا',
+    nav_compare: 'المقارنة',
 
     // Hero
     hero_title: 'اشحن سيارتك\nبثقة واحترافية',
     hero_subtitle:
       'اعثر على الشاحن المثالي لسيارتك الكهربائية في المنزل أو العمل أو أسطول المركبات — موثوقية وذكاء في كل شحنة.',
-    hero_browse: 'تصفح المنتجات',
     hero_choose: 'ساعدني في الاختيار',
+    hero_knowledge: 'بنك المعلومات',
+    hero_browse: 'تصفح المنتجات',
     hero_expert: 'تحدث مع خبيرنا',
 
-    // Features strip
-    feat_fast_title: 'شحن سريع',
-    feat_fast_desc: 'قدرة تصل إلى 150 كيلوواط لشحن فائق السرعة',
-    feat_smart_title: 'تحكم ذكي',
-    feat_smart_desc: 'جدولة ومراقبة عبر التطبيق',
-    feat_tough_title: 'متانة عالية',
-    feat_tough_desc: 'تصنيف IP65 مقاوم للعوامل الجوية',
-
-    // Featured
+    // Featured / Best Sellers
     section_featured: 'الأكثر مبيعاً',
     view_all: 'عرض جميع المنتجات',
 
     // Catalog
     catalog_title: 'المنتجات',
+    catalog_search_placeholder: 'ابحث عن منتج...',
     filter_category: 'الفئة',
     filter_all_categories: 'جميع الفئات',
     filter_brand: 'العلامة التجارية',
@@ -224,8 +238,6 @@ export const translations = {
     filter_power: 'قوة الشحن',
     filter_connector: 'نوع الموصل',
     filter_all_connectors: 'جميع الموصلات',
-    filter_installation: 'نوع التركيب',
-    filter_all_installations: 'جميع الأنواع',
     filter_phase: 'الطور',
     filter_all_phases: 'جميع الأطوار',
     filter_single: 'أحادي الطور',
@@ -248,8 +260,11 @@ export const translations = {
     product_features: 'المزايا الرئيسية',
     product_description: 'وصف المنتج',
     product_specs: 'المواصفات',
-    product_downloads: 'التنزيلات',
+    product_downloads: 'الكتالوج',
     product_quote: 'طلب عرض سعر',
+    product_compare: 'مقارنة',
+    product_compare_added: 'أُضيف للمقارنة',
+    product_compare_remove: 'إزالة',
     spec_power: 'قوة الشحن',
     spec_connector: 'نوع الموصل',
     spec_phase: 'الطور',
@@ -257,6 +272,7 @@ export const translations = {
     spec_smart: 'ميزات ذكية',
     spec_category: 'الفئة',
     spec_brand: 'العلامة التجارية',
+    spec_warranty: 'الضمان',
     spec_yes: 'نعم',
     spec_no: 'لا',
 
@@ -264,13 +280,13 @@ export const translations = {
     expert_title: 'تحدث مع خبيرنا',
     expert_subtitle: 'أدخل بياناتك وسيتواصل معك فريقنا في أقرب وقت.',
     form_name: 'الاسم',
-    form_name_placeholder: 'مثال: أحمد الرشيدي',
+    form_name_placeholder: 'مثال: أحمد محمد',
     form_mobile: 'رقم الجوال',
-    form_mobile_placeholder: 'مثال: 0501234567',
+    form_mobile_placeholder: 'مثال: 01012345678',
     form_submit: 'إرسال الطلب',
     form_submitting: 'جارٍ الإرسال...',
     form_success_title: 'تم الإرسال!',
-    form_success_body: 'شكراً! سيتواصل معك خبيرنا خلال 24 ساعة.',
+    form_success_body: 'تم إرسال طلبك إلى فريقنا. سيتواصل معك أحد أعضاء الفريق قريباً.',
     form_close: 'إغلاق',
     form_required: 'هذا الحقل مطلوب.',
 
@@ -278,6 +294,15 @@ export const translations = {
     quote_title: 'طلب عرض سعر',
     quote_subtitle: 'سنُعدّ لك عرض سعر مخصصاً ونتواصل معك قريباً.',
     quote_product_label: 'المنتج',
+
+    // Compare
+    compare_title: 'مقارنة المنتجات',
+    compare_bar_label: 'تتم مقارنة {n} منتجات',
+    compare_btn: 'قارن الآن',
+    compare_clear: 'مسح الكل',
+    compare_max: 'الحد الأقصى 3 منتجات',
+    compare_empty: 'اختر منتجين أو أكثر للمقارنة.',
+    compare_go: 'الذهاب إلى المقارنة',
 
     // Knowledge Bank
     kb_title: 'بنك المعلومات',
@@ -289,39 +314,59 @@ export const translations = {
       },
       {
         q: 'ما الفرق بين المستوى 1 والمستوى 2 والشحن السريع DC؟',
-        a: 'المستوى 1 يستخدم مقبس منزلي عادي (~2.4 كيلوواط). المستوى 2 يستخدم دائرة 240 فولت مخصصة (3.7–22 كيلوواط) وهو الأكثر شيوعاً للمنازل والمنشآت التجارية. شواحن DC السريعة (50–350 كيلوواط) تشحن البطارية مباشرة وهي مثالية للاستخدام العام وأساطيل المركبات.',
+        a: 'المستوى 1 يستخدم مقبس منزلي عادي (~2.4 كيلوواط). المستوى 2 يستخدم دائرة 240 فولت مخصصة (3.7–22 كيلوواط) وهو الأكثر شيوعاً للمنازل والمنشآت التجارية. شواحن DC السريعة (50–350 كيلوواط) تشحن البطارية مباشرة.',
       },
       {
         q: 'ما هو موصل Type 2؟',
-        a: 'Type 2 (IEC 62196) هو الموصل القياسي للسيارات الكهربائية في منطقة الشرق الأوسط وأوروبا وكثير من مناطق العالم. يدعم الشحن التيار المتردد أحادي وثلاثي الطور وهو متوافق مع جميع السيارات الكهربائية الحديثة تقريباً.',
+        a: 'Type 2 (IEC 62196) هو الموصل القياسي للسيارات الكهربائية في منطقة الشرق الأوسط وأوروبا. يدعم الشحن أحادي وثلاثي الطور وهو متوافق مع جميع السيارات الكهربائية الأوروبية الحديثة.',
       },
       {
         q: 'ما الفرق بين الشحن أحادي الطور وثلاثي الطور؟',
-        a: 'الطاقة أحادية الطور (المتوفرة في معظم المنازل) تُقيّد الشحن بحوالي 7.4 كيلوواط. الطاقة ثلاثية الأطوار (الشائعة في المباني التجارية) تتيح الشحن بقدرة 22 كيلوواط أو أكثر مما يقلل وقت الشحن بشكل كبير.',
+        a: 'الطاقة أحادية الطور تُقيّد الشحن بحوالي 7.4 كيلوواط. الطاقة ثلاثية الأطوار تتيح الشحن بقدرة 22 كيلوواط أو أكثر مما يقلل وقت الشحن بشكل كبير.',
       },
       {
         q: 'كم يستغرق شحن السيارة الكهربائية بالكامل؟',
-        a: 'يعتمد ذلك على حجم بطارية السيارة وسرعة الشاحن. بطارية 60 كيلوواط/ساعة تحتاج ~8 ساعات مع شاحن 7 كيلوواط، و~3 ساعات مع شاحن 22 كيلوواط، وأقل من ساعة مع شاحن DC سريع 50 كيلوواط.',
+        a: 'يعتمد ذلك على حجم بطارية السيارة وسرعة الشاحن. بطارية 60 كيلوواط/ساعة تحتاج ~8 ساعات مع شاحن 7 كيلوواط، و~3 ساعات مع 22 كيلوواط.',
       },
       {
         q: 'هل أحتاج إلى شاحن ذكي؟',
-        a: 'الشواحن الذكية تتيح لك جدولة الشحن خلال أوقات انخفاض أسعار الكهرباء ومراقبة استهلاك الطاقة والتحكم في الجهاز عن بُعد عبر تطبيق. وهي مفيدة بشكل خاص لمستخدمي المنازل الراغبين في توفير تكاليف الكهرباء وللشركات التي تدير نقاط شحن متعددة.',
+        a: 'الشواحن الذكية تتيح جدولة الشحن في أوقات انخفاض أسعار الكهرباء، ومراقبة الاستهلاك، والتحكم عن بُعد عبر تطبيق.',
       },
       {
         q: 'هل يمكن تركيب شاحن كهربائي في الخارج؟',
-        a: 'نعم. الشواحن المُصنَّفة IP54 أو أعلى مقاومة للعوامل الجوية وصالحة للتركيب الخارجي. وحداتنا التجارية مُصنَّفة IP54 وشواحن الجدار مُصنَّفة IP65 مناسبة لجميع الأحوال الجوية.',
+        a: 'نعم. الشواحن المُصنَّفة IP54 أو أعلى مقاومة للعوامل الجوية. وحداتنا التجارية مُصنَّفة IP54 وشواحن الجدار مُصنَّفة IP65.',
       },
       {
         q: 'ما هو بروتوكول OCPP؟',
-        a: 'OCPP (Open Charge Point Protocol) هو معيار مفتوح يتيح للشواحن الكهربائية التواصل مع برامج إدارة نقاط الشحن. يُمكِّن المراقبة عن بُعد والفوترة وإدارة الأسطول عبر شواحن من مختلف الشركات المصنعة.',
+        a: 'OCPP هو معيار مفتوح يتيح للشواحن التواصل مع برامج إدارة نقاط الشحن، مما يُمكِّن المراقبة عن بُعد والفوترة وإدارة الأسطول.',
       },
       {
-        q: 'ما هو موازنة الأحمال؟',
-        a: 'موازنة الأحمال (أو إدارة الأحمال الديناميكية) توزع الطاقة المتاحة تلقائياً على نقاط الشحن المتعددة لتفادي الحمل الزائد على التمديد الكهربائي للمبنى. وهي ضرورية للتركيبات متعددة الوحدات في المنازل والمكاتب وأساطيل المركبات.',
+        q: 'ما هو موصل GBT؟',
+        a: 'GBT (GB/T) هو المعيار الصيني الوطني لموصلات شحن السيارات الكهربائية، ويُستخدم في السيارات الصينية مثل BYD وNIO وChery.',
       },
       {
-        q: 'كيف أختار الشاحن المناسب لي؟',
-        a: 'انظر في: (1) الموقع — منزل أم عمل أم عام؛ (2) عدد السيارات التي تريد شحنها في وقت واحد؛ (3) نوع التغذية الكهربائية المتاحة — أحادية أم ثلاثية الطور؛ (4) حاجتك للميزات الذكية؛ (5) ميزانيتك. استخدم أداة "ساعدني في الاختيار" للحصول على توصية موجَّهة.',
+        q: 'هل يمكنني استخدام شاحن Type 2 مع سيارة صينية؟',
+        a: 'لا — السيارات الصينية المستوردة (BYD, NIO, Chery) تستخدم معيار GBT الذي يتطلب شاحناً أو كابلاً متوافقاً مع GBT.',
+      },
+      {
+        q: 'ما هي فترة الضمان للمنتجات؟',
+        a: 'تختلف شروط الضمان حسب المنتج والعلامة التجارية. بشكل عام، تأتي شواحن الجدار بضمان سنتين وشواحن المحمول بضمان سنة واحدة.',
+      },
+      {
+        q: 'هل أحتاج إلى كهربائي مرخص لتركيب شاحن الجدار؟',
+        a: 'نعم. يجب أن يقوم كهربائي مرخص بتركيب شواحن الجدار لضمان السلامة والامتثال للوائح الكهربائية المحلية.',
+      },
+      {
+        q: 'ماذا يحدث لو كانت سيارتي تستخدم بروتوكولاً مختلفاً عن الشاحن؟',
+        a: 'لن تتمكن من الشحن. استخدام موصل غير متوافق لن يعمل وقد يتلف منفذ الشحن. تأكد دائماً من نوع الموصل قبل الشراء.',
+      },
+      {
+        q: 'ما الفرق بين الشاحن المحمول وشاحن الجدار؟',
+        a: 'الشاحن المحمول يعمل بمقبس عادي ويمكن حمله في أي مكان، لكنه أبطأ. شاحن الجدار يتطلب تركيباً ثابتاً لكنه أسرع وأكثر ملاءمة للاستخدام اليومي.',
+      },
+      {
+        q: 'ماذا لو كنت أسكن في شقة؟',
+        a: 'إذا كنت تسكن في شقة، قد يتطلب تركيب شاحن جدار موافقة إدارة المبنى. الشاحن المحمول هو الحل الأكثر عملية في الغالب. تواصل معنا عبر <a href="#contact" class="text-brand-sky hover:underline">صفحة التواصل</a> للحصول على مشورة مخصصة.',
       },
     ],
 
@@ -332,10 +377,10 @@ export const translations = {
     contact_email: 'البريد الإلكتروني',
     contact_address: 'العنوان',
     contact_hours: 'ساعات العمل',
-    contact_phone_val: '4567 123 11 966+',
-    contact_email_val: 'info@evchargersolutions.com',
-    contact_address_val: 'الرياض، المملكة العربية السعودية',
-    contact_hours_val: 'الأحد – الخميس، 9 صباحاً – 6 مساءً',
+    contact_phone_val: '+20 12 2213 7316',
+    contact_email_val: 'info@solargyco.com',
+    contact_address_val: '15 شارع السيدة خديجة، مدينة نصر، القاهرة، مصر',
+    contact_hours_val: 'الأحد – الخميس، 9:00 ص – 5:00 م',
 
     // Questionnaire
     q_step: 'الخطوة {current} من {total}',
@@ -344,21 +389,14 @@ export const translations = {
     q_finish: 'عرض التوصيات',
 
     // Results
-    results_title: 'الشواحن الموصى بها',
+    results_title: 'المنتجات الموصى بها',
     results_matched: 'مطابق لـ: {tags}.',
     results_based: 'بناءً على تفضيلاتك.',
     results_none_title: 'لا توجد نتائج مطابقة.',
-    results_none_sub: 'تصفح كتالوجنا الكامل للعثور على الشاحن المناسب.',
+    results_none_sub: 'تصفح كتالوجنا الكامل للعثور على المنتج المناسب.',
     results_browse: 'تصفح جميع المنتجات',
     results_retake: 'إعادة الاستبيان ←',
     results_browse_all: 'تصفح جميع المنتجات →',
-    results_tag_home: 'الاستخدام المنزلي',
-    results_tag_business: 'الاستخدام التجاري',
-    results_tag_standard: 'سرعة الشحن العادية',
-    results_tag_fast: 'الشحن السريع',
-    results_tag_ultra: 'الشحن الفائق السرعة',
-    results_tag_smart: 'الميزات الذكية',
-    results_tag_portable: 'القابلية للحمل',
 
     // Footer
     footer_tagline: 'حلول شحن موثوقة للمنازل والمنشآت التجارية وأسطول المركبات.',

@@ -1,20 +1,21 @@
 import { useState, useEffect } from 'react'
 import { useLang } from '../contexts/LanguageContext'
 import { useProducts } from '../hooks/useProducts'
-import { getCategories, getBrands } from '../services/products'
+import { getCategories, getBrands, getConnectorTypes } from '../services/products'
 import ProductCard from '../components/ProductCard'
 
 export default function CatalogPage() {
   const { t } = useLang()
   const [categories, setCategories] = useState([])
   const [brands, setBrands] = useState([])
+  const [connectorTypes, setConnectorTypes] = useState([])
+  const [search, setSearch] = useState('')
   const [filters, setFilters] = useState({
     category_id: '',
     brand: '',
     price_sort: '',
     powerRange: 0,
     connector_type: '',
-    installation_type: '',
     phase: '',
   })
 
@@ -28,6 +29,7 @@ export default function CatalogPage() {
   useEffect(() => {
     getCategories().then(setCategories)
     getBrands().then(setBrands)
+    getConnectorTypes().then(setConnectorTypes)
   }, [])
 
   const range = POWER_RANGES[filters.powerRange]
@@ -38,8 +40,8 @@ export default function CatalogPage() {
     ...(range.min != null && { min_power_kw: range.min }),
     ...(range.max != null && { max_power_kw: range.max }),
     ...(filters.connector_type && { connector_type: filters.connector_type }),
-    ...(filters.installation_type && { installation_type: filters.installation_type }),
     ...(filters.phase && { phase: filters.phase }),
+    ...(search && { search }),
   })
 
   function update(key, value) {
@@ -47,12 +49,34 @@ export default function CatalogPage() {
   }
 
   function clearFilters() {
-    setFilters({ category_id: '', brand: '', price_sort: '', powerRange: 0, connector_type: '', installation_type: '', phase: '' })
+    setFilters({ category_id: '', brand: '', price_sort: '', powerRange: 0, connector_type: '', phase: '' })
+    setSearch('')
   }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <h1 className="text-3xl font-bold text-white mb-8">{t('catalog_title')}</h1>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <h1 className="text-3xl font-bold text-white">{t('catalog_title')}</h1>
+        {/* Search bar */}
+        <div className="relative w-full sm:w-72">
+          <span className="absolute start-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={t('catalog_search_placeholder')}
+            className="w-full bg-brand-navy border border-white/10 rounded-lg ps-9 pe-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-blue"
+          />
+          {search && (
+            <button
+              onClick={() => setSearch('')}
+              className="absolute end-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+      </div>
 
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar */}
@@ -118,21 +142,8 @@ export default function CatalogPage() {
                 onChange={(e) => update('connector_type', e.target.value)}
               >
                 <option value="">{t('filter_all_connectors')}</option>
-                {['Type 2', 'CCS2', 'CHAdeMO', 'Type 1'].map((c) => (
+                {connectorTypes.map((c) => (
                   <option key={c} value={c}>{c}</option>
-                ))}
-              </select>
-            </FilterGroup>
-
-            <FilterGroup label={t('filter_installation')}>
-              <select
-                className="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-blue"
-                value={filters.installation_type}
-                onChange={(e) => update('installation_type', e.target.value)}
-              >
-                <option value="">{t('filter_all_installations')}</option>
-                {['Wall-mounted', 'Pedestal', 'Portable'].map((ty) => (
-                  <option key={ty} value={ty}>{ty}</option>
                 ))}
               </select>
             </FilterGroup>

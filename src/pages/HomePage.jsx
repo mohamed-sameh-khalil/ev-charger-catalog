@@ -24,34 +24,43 @@ export default function HomePage() {
         className="relative py-24 px-4 text-white overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #060B18 0%, #0C1A35 50%, #003a7a 100%)' }}
       >
-        {/* Decorative glow */}
         <div
           className="absolute inset-0 opacity-20 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 60% 50% at 50% 60%, #0078FF 0%, transparent 70%)',
-          }}
+          style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 60%, #0078FF 0%, transparent 70%)' }}
         />
         <div className="relative max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 leading-tight whitespace-pre-line">
             {t('hero_title')}
           </h1>
           <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">{t('hero_subtitle')}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* Primary CTAs — Help Me Choose + Knowledge Bank */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+            <Link
+              to="/find-your-charger"
+              className="bg-brand-blue text-white font-bold px-10 py-4 rounded-xl hover:opacity-90 transition-opacity text-lg shadow-lg shadow-brand-blue/30"
+            >
+              ⚡ {t('hero_choose')}
+            </Link>
+            <Link
+              to="/knowledge-bank"
+              className="bg-white/10 border border-white/30 text-white font-bold px-10 py-4 rounded-xl hover:bg-white/20 transition-colors text-lg backdrop-blur-sm"
+            >
+              📚 {t('hero_knowledge')}
+            </Link>
+          </div>
+
+          {/* Secondary CTAs — Browse Products + Talk to Expert */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/catalog"
-              className="bg-brand-blue text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 transition-opacity"
+              className="border border-brand-sky/50 text-brand-sky font-medium px-8 py-2.5 rounded-lg hover:bg-brand-sky/10 transition-colors"
             >
               {t('hero_browse')}
             </Link>
-            <Link
-              to="/find-your-charger"
-              className="border border-brand-sky text-brand-sky font-semibold px-8 py-3.5 rounded-xl hover:bg-brand-sky/10 transition-colors"
-            >
-              {t('hero_choose')}
-            </Link>
             <button
               onClick={() => setShowExpert(true)}
-              className="border border-white/30 text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-white/10 transition-colors"
+              className="border border-white/20 text-gray-300 font-medium px-8 py-2.5 rounded-lg hover:bg-white/10 transition-colors"
             >
               {t('hero_expert')}
             </button>
@@ -89,8 +98,29 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* Help Me Choose banner */}
+      <section className="py-12 px-4 bg-brand-navy border-y border-white/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-brand-sky text-sm font-semibold uppercase tracking-widest mb-3">
+            {t('nav_find')}
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Not sure which charger is right for you?
+          </h2>
+          <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+            Answer 4 quick questions and we'll recommend the perfect product for your car and situation.
+          </p>
+          <Link
+            to="/find-your-charger"
+            className="inline-block bg-brand-blue text-white font-bold px-10 py-4 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-brand-blue/30"
+          >
+            ⚡ {t('hero_choose')}
+          </Link>
+        </div>
+      </section>
+
       {/* Contact Us */}
-      <section id="contact" className="py-16 px-4 bg-brand-navy border-t border-white/10">
+      <section id="contact" className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-white mb-2">{t('contact_title')}</h2>
@@ -98,7 +128,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {contactItems.map(({ icon, label, value, href }) => (
-              <div key={label} className="bg-brand-dark rounded-xl p-6 border border-white/10 flex items-start gap-4">
+              <div key={label} className="bg-brand-navy rounded-xl p-6 border border-white/10 flex items-start gap-4">
                 <span className="text-2xl mt-0.5">{icon}</span>
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">{label}</p>

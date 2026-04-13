@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useLang } from '../contexts/LanguageContext'
+import { useCompare } from '../contexts/CompareContext'
 import { getProductBySlug, getImageUrl, getDatasheetUrl } from '../services/products'
 import { RequestQuoteModal } from '../components/ExpertFormModal'
 
 export default function ProductDetailPage() {
   const { slug } = useParams()
   const { t } = useLang()
+  const { toggle, isSelected, MAX, items } = useCompare()
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -62,6 +64,9 @@ export default function ProductDetailPage() {
 
   const images = product.product_images || []
   const datasheets = product.product_datasheets || []
+  const selected = isSelected(product.id)
+  const compareAtMax = !selected && items.length >= MAX
+
   const specs = [
     { label: t('spec_brand'), value: product.brand || '—' },
     { label: t('spec_power'), value: product.power_output_kw ? `${product.power_output_kw} kW` : '—' },
@@ -69,12 +74,13 @@ export default function ProductDetailPage() {
     { label: t('spec_phase'), value: product.phase || '—' },
     { label: t('spec_installation'), value: product.installation_type || '—' },
     { label: t('spec_smart'), value: product.is_smart ? t('spec_yes') : t('spec_no') },
+    { label: t('spec_warranty'), value: product.warranty || '—' },
     { label: t('spec_category'), value: product.categories?.name || '—' },
   ]
 
   return (
     <>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-24">
         <Link to="/catalog" className="text-sm text-brand-sky hover:underline mb-6 inline-block">
           {t('product_back')}
         </Link>
@@ -119,7 +125,7 @@ export default function ProductDetailPage() {
             <p className="text-gray-400">{product.short_description}</p>
             <p className="text-2xl font-bold text-white">
               {product.price != null
-                ? `${product.currency || 'USD'} ${Number(product.price).toLocaleString()}`
+                ? `${product.currency || 'EGP'} ${Number(product.price).toLocaleString()}`
                 : t('product_contact')}
             </p>
 
@@ -138,12 +144,29 @@ export default function ProductDetailPage() {
               </div>
             )}
 
-            <button
-              onClick={() => setShowQuote(true)}
-              className="mt-2 bg-brand-blue text-white font-semibold py-3 px-6 rounded-xl hover:opacity-90 transition-opacity text-sm"
-            >
-              {t('product_quote')}
-            </button>
+            {/* Action buttons */}
+            <div className="flex flex-col gap-3 mt-2">
+              <button
+                onClick={() => setShowQuote(true)}
+                className="bg-brand-blue text-white font-semibold py-3 px-6 rounded-xl hover:opacity-90 transition-opacity text-sm"
+              >
+                {t('product_quote')}
+              </button>
+              <button
+                onClick={() => toggle(product)}
+                disabled={compareAtMax}
+                className={`py-2.5 px-6 rounded-xl text-sm font-medium border transition-colors ${
+                  selected
+                    ? 'border-brand-sky text-brand-sky bg-brand-sky/10 hover:bg-brand-sky/20'
+                    : compareAtMax
+                    ? 'border-white/10 text-gray-500 cursor-not-allowed'
+                    : 'border-white/20 text-gray-300 hover:border-white/40 hover:text-white'
+                }`}
+              >
+                {selected ? `✓ ${t('product_compare_added')}` : t('product_compare')}
+                {compareAtMax && <span className="ms-2 text-xs">({t('compare_max')})</span>}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -164,7 +187,7 @@ export default function ProductDetailPage() {
           </div>
         </section>
 
-        {/* Downloads */}
+        {/* Datasheet downloads */}
         {datasheets.length > 0 && (
           <section className="mt-8">
             <h2 className="text-lg font-bold text-white mb-4">{t('product_downloads')}</h2>

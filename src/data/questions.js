@@ -1,38 +1,79 @@
 export const questions = [
   {
-    id: 'location',
-    question: { en: 'Where will you primarily charge?', ar: 'أين ستشحن سيارتك بشكل رئيسي؟' },
+    id: 'protocol',
+    question: {
+      en: 'What charging protocol does your car use?',
+      ar: 'ما بروتوكول الشحن الذي تستخدمه سيارتك؟',
+    },
     options: [
-      { value: 'home', label: { en: 'At home', ar: 'في المنزل' } },
-      { value: 'business', label: { en: 'At my business', ar: 'في مقر عملي' } },
-      { value: 'public', label: { en: 'In public / shared spaces', ar: 'في الأماكن العامة / المشتركة' } },
+      {
+        value: 'gbt',
+        label: {
+          en: 'Chinese Protocol (e.g., BYD, NIO, Chery – most imported cars)',
+          ar: 'البروتوكول الصيني (مثل BYD, NIO, Chery – معظم السيارات المستوردة)',
+        },
+      },
+      {
+        value: 'type1',
+        label: {
+          en: 'Type 1 (American cars like Hummer, Cadillac)',
+          ar: 'النوع الأول – Type 1 (السيارات الأمريكية مثل هامر وكاديلاك)',
+        },
+      },
+      {
+        value: 'type2',
+        label: {
+          en: 'Type 2 (European cars)',
+          ar: 'النوع الثاني – Type 2 (السيارات الأوروبية)',
+        },
+      },
     ],
   },
   {
-    id: 'vehicles',
-    question: { en: 'How many vehicles do you need to charge?', ar: 'كم عدد السيارات التي تريد شحنها؟' },
+    id: 'product_type',
+    question: {
+      en: 'What type of product do you need?',
+      ar: 'ما نوع المنتج الذي تحتاجه؟',
+    },
     options: [
-      { value: '1', label: { en: 'Just one vehicle', ar: 'سيارة واحدة فقط' } },
-      { value: '2-5', label: { en: '2–5 vehicles', ar: '2–5 سيارات' } },
-      { value: '6+', label: { en: '6 or more vehicles', ar: '6 سيارات أو أكثر' } },
+      {
+        value: 'wall',
+        label: { en: 'Wall-mounted charger', ar: 'شاحن مثبَّت على الجدار' },
+      },
+      {
+        value: 'cable',
+        label: { en: 'Charging cable', ar: 'كابل شحن' },
+      },
+      {
+        value: 'portable',
+        label: { en: 'Portable charger', ar: 'شاحن محمول' },
+      },
     ],
   },
   {
-    id: 'speed',
-    question: { en: 'How fast do you need to charge?', ar: 'ما سرعة الشحن التي تحتاجها؟' },
+    id: 'phase',
+    question: {
+      en: 'Do you have a single-phase or three-phase meter?',
+      ar: 'هل لديك عداد أحادي أم ثلاثي أوجه؟',
+    },
+    hasImages: true,
     options: [
-      { value: 'standard', label: { en: 'Standard (up to 7 kW) — overnight is fine', ar: 'عادي (حتى 7 كيلوواط) — يكفي الشحن الليلي' } },
-      { value: 'fast', label: { en: 'Fast (7–22 kW) — a few hours', ar: 'سريع (7–22 كيلوواط) — بضع ساعات' } },
-      { value: 'ultra', label: { en: 'Ultra-fast (22+ kW) — as quick as possible', ar: 'فائق السرعة (22+ كيلوواط) — أسرع ما يمكن' } },
-    ],
-  },
-  {
-    id: 'installation',
-    question: { en: 'What type of installation do you need?', ar: 'ما نوع التركيب الذي تحتاجه؟' },
-    options: [
-      { value: 'wall', label: { en: 'Wall-mounted (fixed location)', ar: 'مثبَّت على الجدار (موقع ثابت)' } },
-      { value: 'pedestal', label: { en: 'Pedestal / standalone unit', ar: 'وحدة مستقلة على قاعدة' } },
-      { value: 'portable', label: { en: 'Portable (take it anywhere)', ar: 'محمول (يمكن أخذه في أي مكان)' } },
+      {
+        value: 'single',
+        label: { en: 'Single-phase meter', ar: 'عداد أحادي' },
+        description: {
+          en: 'Standard home meter — 2 wires',
+          ar: 'العداد المنزلي العادي — سلكان',
+        },
+      },
+      {
+        value: 'three',
+        label: { en: 'Three-phase meter', ar: 'عداد ثلاثي أوجه' },
+        description: {
+          en: 'Industrial / large property meter — 4 wires',
+          ar: 'عداد صناعي أو منزل كبير — 4 أسلاك',
+        },
+      },
     ],
   },
   {
