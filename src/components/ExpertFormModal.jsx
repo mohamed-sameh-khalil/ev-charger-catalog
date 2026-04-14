@@ -34,8 +34,8 @@ export default function ExpertFormModal({ onClose }) {
       {success ? (
         <div className="text-center py-6">
           <div className="text-5xl mb-4">✅</div>
-          <h2 className="text-xl font-bold text-white mb-2">{t('form_success_title')}</h2>
-          <p className="text-gray-300 mb-6">{t('form_success_body')}</p>
+          <h2 className="text-xl font-bold text-white mb-2">{t('expert_success_title')}</h2>
+          <p className="text-gray-300 mb-6">{t('expert_success_body')}</p>
           <button
             onClick={onClose}
             className="bg-brand-blue text-white font-semibold px-8 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
@@ -112,8 +112,8 @@ export function RequestQuoteModal({ product, onClose }) {
       {success ? (
         <div className="text-center py-6">
           <div className="text-5xl mb-4">✅</div>
-          <h2 className="text-xl font-bold text-white mb-2">{t('form_success_title')}</h2>
-          <p className="text-gray-300 mb-6">{t('form_success_body')}</p>
+          <h2 className="text-xl font-bold text-white mb-2">{t('quote_success_title')}</h2>
+          <p className="text-gray-300 mb-6">{t('quote_success_body')}</p>
           <button
             onClick={onClose}
             className="bg-brand-blue text-white font-semibold px-8 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
