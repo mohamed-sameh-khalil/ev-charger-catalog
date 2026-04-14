@@ -318,30 +318,17 @@ export function getDatasheetUrl(storagePath) {
 }
 
 /**
- * Submit an expert consultation request via Netlify Forms.
- * Netlify captures the submission and sends an email notification to the configured address.
+ * Submit an expert consultation request.
+ * TODO: wire up to a backend / email service when ready.
  */
-export async function submitExpertRequest(payload) {
-  const body = new URLSearchParams({
-    'form-name': 'expert-request',
-    name: payload.name || '',
-    mobile: payload.mobile || '',
-  })
-  const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
-  if (!res.ok) throw new Error('Submission failed')
+export async function submitExpertRequest(_payload) {
+  // no-op — success popup is shown client-side
 }
 
 /**
- * Submit a product quote request via Netlify Forms.
- * Netlify captures the submission and sends an email notification to the configured address.
+ * Submit a product quote request.
+ * TODO: wire up to a backend / email service when ready.
  */
-export async function submitQuoteRequest(payload) {
-  const body = new URLSearchParams({
-    'form-name': 'quote-request',
-    name: payload.name || '',
-    mobile: payload.mobile || '',
-    product_name: payload.product_name || '',
-  })
-  const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
-  if (!res.ok) throw new Error('Submission failed')
+export async function submitQuoteRequest(_payload) {
+  // no-op — success popup is shown client-side
 }
