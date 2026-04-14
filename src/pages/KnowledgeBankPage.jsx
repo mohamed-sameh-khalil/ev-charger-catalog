@@ -32,9 +32,10 @@ export default function KnowledgeBankPage() {
               </span>
             </button>
             {open === i && (
-              <div className="px-6 pb-5 text-gray-300 text-sm leading-relaxed border-t border-white/10 pt-4">
-                {item.a}
-              </div>
+              <div
+                className="kb-answer px-6 pb-5 text-gray-300 text-sm leading-relaxed border-t border-white/10 pt-4"
+                dangerouslySetInnerHTML={{ __html: item.a }}
+              />
             )}
           </div>
         ))}
