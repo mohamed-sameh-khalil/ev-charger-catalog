@@ -46,10 +46,10 @@ body {
 
 .kb-answer .kb-list { list-style: none; margin: 0.75rem 0 0; padding: 0; }
 .kb-answer .kb-list li {
-  padding: 4px 0 4px 1.5rem; position: relative; line-height: 1.65; color: #d1d5db;
+  padding: 5px 0 5px 1.75rem; position: relative; line-height: 1.65; color: #d1d5db;
 }
 .kb-answer .kb-list li::before {
-  content: ''; position: absolute; start: 0; top: 12px;
+  content: ''; position: absolute; inset-inline-start: 0; top: 0.6em;
   width: 8px; height: 8px; border-radius: 50%;
   background: rgba(0,120,255,0.2); border: 2px solid #0078FF;
 }
