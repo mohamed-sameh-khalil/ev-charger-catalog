@@ -316,6 +316,186 @@ const PRODUCTS = [
       { storage_path: null, file_name: 'GBT-Type2-Adapter-Datasheet.pdf', file_size_bytes: 750000 },
     ],
   },
+
+  // ── Real products from catalog ──────────────────────────────────────────────
+
+  {
+    id: 'prod-10',
+    category_id: 'cat-3',
+    brand: 'BESEN',
+    name: 'Besen Cable Type 2 to Type 2',
+    slug: 'besen-cable-type2-to-type2',
+    short_description: 'Heavy-duty 22 kW three-phase Type 2 to Type 2 cable for fast AC charging.',
+    long_description:
+      'The BESEN Type 2 to Type 2 cable delivers three-phase 22 kW AC charging between the station and your EV. Robust construction with IP44-rated connectors and a flexible 5-metre cable — compatible with all Type 2 EVs and public stations.',
+    price: 8010,
+    currency: 'EGP',
+    power_output_kw: 22,
+    connector_type: 'Type 2',
+    phase: 'Three Phase',
+    installation_type: 'Cable',
+    is_smart: false,
+    is_featured: true,
+    is_active: true,
+    warranty: '1 year',
+    key_features: [
+      'Type 2 to Type 2 (Mode 3)',
+      '22 kW / three-phase rated',
+      'IP44-rated connectors',
+      '5-metre flexible cable',
+      'Compatible with all Type 2 EVs and stations',
+      'Robust strain-relief construction',
+    ],
+    categories: { name: 'Cables' },
+    product_images: [
+      { storage_path: '/products/images/besen-cable-type2.png', alt_text: 'Besen Type 2 to Type 2 Cable', is_primary: true, display_order: 1 },
+    ],
+    product_datasheets: [
+      { storage_path: '/products/datasheets/besen-cable-type2-datasheet.pdf', file_name: 'Besen-Cable-Type2-Datasheet.pdf', file_size_bytes: null },
+    ],
+  },
+  {
+    id: 'prod-11',
+    category_id: 'cat-2',
+    brand: 'BESEN',
+    name: 'Besen Portable Charger GBT',
+    slug: 'besen-portable-charger-gbt',
+    short_description: 'Smart 7.4 kW portable GBT charger with app control — charge your Chinese EV anywhere.',
+    long_description:
+      'The BESEN Portable GBT Charger delivers 7.4 kW single-phase charging for Chinese-standard EVs (BYD, NIO, Chery, etc.). Built-in smart features with app control, adjustable current, and LED status display in a compact portable design.',
+    price: 15640,
+    currency: 'EGP',
+    power_output_kw: 7.4,
+    connector_type: 'GBT',
+    phase: 'Single Phase',
+    installation_type: 'Portable',
+    is_smart: true,
+    is_featured: true,
+    is_active: true,
+    warranty: '1 year',
+    key_features: [
+      '7.4 kW single-phase output',
+      'GBT connector (Chinese EV standard)',
+      'Smart app control & scheduling',
+      'Adjustable current output',
+      'LED status indicator',
+      'Compact portable design with carry bag',
+    ],
+    categories: { name: 'Portable Charger' },
+    product_images: [
+      { storage_path: '/products/images/besen-portable-gbt.png', alt_text: 'Besen Portable Charger GBT', is_primary: true, display_order: 1 },
+    ],
+    product_datasheets: [
+      { storage_path: '/products/datasheets/besen-portable-gbt-datasheet.pdf', file_name: 'Besen-Portable-GBT-Datasheet.pdf', file_size_bytes: null },
+    ],
+  },
+  {
+    id: 'prod-12',
+    category_id: 'cat-1',
+    brand: 'Rolec',
+    name: 'Rolec Qubev',
+    slug: 'rolec-qubev',
+    short_description: 'Reliable 22 kW three-phase wall charger with sleek modern design.',
+    long_description:
+      'The Rolec Qubev is a premium 22 kW three-phase wall-mounted charger built for home and workplace installations. Its compact, weather-resistant enclosure and Type 2 socket make it a future-proof choice for any European EV.',
+    price: 22655,
+    currency: 'EGP',
+    power_output_kw: 22,
+    connector_type: 'Type 2',
+    phase: 'Three Phase',
+    installation_type: 'Wall-mounted',
+    is_smart: false,
+    is_featured: true,
+    is_active: true,
+    warranty: '3 years',
+    key_features: [
+      '22 kW three-phase output',
+      'Type 2 universal socket',
+      'Compact weather-resistant enclosure',
+      'LED status indicator',
+      'IP54 rated',
+      '3-year manufacturer warranty',
+    ],
+    categories: { name: 'Wall Mounted Charger' },
+    product_images: [
+      { storage_path: '/products/images/rolec-qubev.png', alt_text: 'Rolec Qubev Wall Charger', is_primary: true, display_order: 1 },
+    ],
+    product_datasheets: [
+      { storage_path: '/products/datasheets/rolec-qubev-datasheet.pdf', file_name: 'Rolec-Qubev-Datasheet.pdf', file_size_bytes: null },
+    ],
+  },
+  {
+    id: 'prod-13',
+    category_id: 'cat-1',
+    brand: 'Rolec',
+    name: 'Rolec EVO',
+    slug: 'rolec-evo',
+    short_description: 'Smart 7.4 kW / 22 kW wall charger with OCPP and app control — 5-year warranty.',
+    long_description:
+      'The Rolec EVO is a premium smart wall charger supporting both single-phase (7.4 kW) and three-phase (22 kW) installations. OCPP 1.6J compliant with built-in app control, load management, and a 5-year warranty for total peace of mind.',
+    price: 38720,
+    currency: 'EGP',
+    power_output_kw: 22,
+    power_output_label: '7.4 kW / 22 kW',
+    connector_type: 'Type 2',
+    phase: 'Single Phase / Three Phase',
+    installation_type: 'Wall-mounted',
+    is_smart: true,
+    is_featured: true,
+    is_active: true,
+    warranty: '5 years',
+    key_features: [
+      '7.4 kW (single-phase) or 22 kW (three-phase)',
+      'Type 2 universal socket',
+      'OCPP 1.6J compatible',
+      'Smart app control & load management',
+      'IP55 rated enclosure',
+      'Industry-leading 5-year warranty',
+    ],
+    categories: { name: 'Wall Mounted Charger' },
+    product_images: [
+      { storage_path: '/products/images/rolec-evo.png', alt_text: 'Rolec EVO Smart Wall Charger', is_primary: true, display_order: 1 },
+    ],
+    product_datasheets: [
+      { storage_path: '/products/datasheets/rolec-evo-datasheet.pdf', file_name: 'Rolec-EVO-Datasheet.pdf', file_size_bytes: null },
+    ],
+  },
+  {
+    id: 'prod-14',
+    category_id: 'cat-1',
+    brand: 'Schneider Electric',
+    name: 'Schneider Charge',
+    slug: 'schneider-charge',
+    short_description: 'Smart 7.4 kW / 22 kW wall charger from Schneider Electric — built for reliability.',
+    long_description:
+      'The Schneider Charge wall charger supports both single-phase (7.4 kW) and three-phase (22 kW) configurations. Engineered with Schneider Electric\'s industrial quality standards, it delivers smart charging with app control, RFID access, and built-in energy monitoring.',
+    price: 39900,
+    currency: 'EGP',
+    power_output_kw: 22,
+    power_output_label: '7.4 kW / 22 kW',
+    connector_type: 'Type 2',
+    phase: 'Single Phase / Three Phase',
+    installation_type: 'Wall-mounted',
+    is_smart: true,
+    is_featured: true,
+    is_active: true,
+    warranty: '1.5 years',
+    key_features: [
+      '7.4 kW (single-phase) or 22 kW (three-phase)',
+      'Type 2 universal socket',
+      'Smart app control & energy monitoring',
+      'RFID access control',
+      'IP55 rated enclosure',
+      'Schneider Electric industrial reliability',
+    ],
+    categories: { name: 'Wall Mounted Charger' },
+    product_images: [
+      { storage_path: '/products/images/schneider-charge.png', alt_text: 'Schneider Charge Wall Charger', is_primary: true, display_order: 1 },
+    ],
+    product_datasheets: [
+      { storage_path: '/products/datasheets/schneider-charge-datasheet.pdf', file_name: 'Schneider-Charge-Datasheet.pdf', file_size_bytes: null },
+    ],
+  },
 ]
 
 // ---------------------------------------------------------------------------
@@ -434,19 +614,30 @@ export function getDatasheetUrl(storagePath) {
 }
 
 /**
- * Submit an expert consultation request.
- * TODO: POST to Supabase edge function or backend endpoint which emails info@solargyco.com
+ * Submit an expert consultation request via Netlify Forms.
+ * Netlify captures the submission and sends an email notification to the configured address.
  */
 export async function submitExpertRequest(payload) {
-  await delay(800)
-  console.log('[Mock] Expert request submitted:', payload)
+  const body = new URLSearchParams({
+    'form-name': 'expert-request',
+    name: payload.name || '',
+    mobile: payload.mobile || '',
+  })
+  const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
+  if (!res.ok) throw new Error('Submission failed')
 }
 
 /**
- * Submit a product quote request.
- * TODO: POST to Supabase edge function or backend endpoint which emails info@solargyco.com
+ * Submit a product quote request via Netlify Forms.
+ * Netlify captures the submission and sends an email notification to the configured address.
  */
 export async function submitQuoteRequest(payload) {
-  await delay(800)
-  console.log('[Mock] Quote request submitted:', payload)
+  const body = new URLSearchParams({
+    'form-name': 'quote-request',
+    name: payload.name || '',
+    mobile: payload.mobile || '',
+    product_name: payload.product_name || '',
+  })
+  const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
+  if (!res.ok) throw new Error('Submission failed')
 }

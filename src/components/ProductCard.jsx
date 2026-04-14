@@ -70,7 +70,7 @@ export default function ProductCard({ product }) {
           </h3>
           <p className="text-gray-400 text-sm line-clamp-2 flex-1">{product.short_description}</p>
           <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/10">
-            <span className="text-sm text-gray-400">{product.power_output_kw} kW</span>
+            <span className="text-sm text-gray-400">{product.power_output_label || `${product.power_output_kw} kW`}</span>
             <span className="font-semibold text-white">
               {product.price != null
                 ? `${product.currency || 'EGP'} ${Number(product.price).toLocaleString()}`

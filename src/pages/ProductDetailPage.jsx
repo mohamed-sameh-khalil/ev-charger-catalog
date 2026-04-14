@@ -69,7 +69,7 @@ export default function ProductDetailPage() {
 
   const specs = [
     { label: t('spec_brand'), value: product.brand || '—' },
-    { label: t('spec_power'), value: product.power_output_kw ? `${product.power_output_kw} kW` : '—' },
+    { label: t('spec_power'), value: product.power_output_label || (product.power_output_kw ? `${product.power_output_kw} kW` : '—') },
     { label: t('spec_connector'), value: product.connector_type || '—' },
     { label: t('spec_phase'), value: product.phase || '—' },
     { label: t('spec_installation'), value: product.installation_type || '—' },

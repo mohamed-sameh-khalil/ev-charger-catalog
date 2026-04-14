@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useLang } from '../contexts/LanguageContext'
-import { submitExpertRequest } from '../services/products'
+import { submitExpertRequest, submitQuoteRequest } from '../services/products'
 
 export default function ExpertFormModal({ onClose }) {
   const { t } = useLang()
@@ -100,7 +100,7 @@ export function RequestQuoteModal({ product, onClose }) {
     if (Object.keys(e2).length) { setErrors(e2); return }
     setSubmitting(true)
     try {
-      await submitExpertRequest({ ...form, product_id: product?.id, product_name: product?.name })
+      await submitQuoteRequest({ ...form, product_name: product?.name })
       setSuccess(true)
     } finally {
       setSubmitting(false)

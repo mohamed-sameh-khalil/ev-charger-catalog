@@ -217,7 +217,7 @@ export const translations = {
 <div class="kb-success">Every apartment situation is different. The good news is there is almost always a solution — it just needs the right assessment.</div>
 <div class="kb-contact">
   <div><p><strong>Not sure what works for your building?</strong></p><p>Contact our experts and one of our team will get back to you shortly.</p></div>
-  <a href="#contact">Contact an expert ↗</a>
+  <a href="/#contact">Contact an expert ↗</a>
 </div>`,
       },
       {
@@ -489,7 +489,7 @@ export const translations = {
 <div class="kb-success">كل شقة حالة مختلفة. الخبر السار أنه يكاد يكون هناك دائماً حل — يحتاج فقط إلى التقييم الصحيح.</div>
 <div class="kb-contact">
   <div><p><strong>غير متأكد مما يناسب مبناك؟</strong></p><p>تواصل مع خبرائنا وسيرد عليك أحد أعضاء الفريق قريباً.</p></div>
-  <a href="#contact">تواصل مع خبير ↗</a>
+  <a href="/#contact">تواصل مع خبير ↗</a>
 </div>`,
       },
       {
